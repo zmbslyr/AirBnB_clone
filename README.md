@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 0x00. AirBnB clone - The console
 
 ## Description
@@ -18,7 +17,7 @@ What you should learn from this project:
 ---
 
 ### [0. README, AUTHORS](./README.md)
-* 
+*
 Write a README.md:
 
 
@@ -102,9 +101,6 @@ Also, we strongly encourage you to use branches and pull requests on Github - it
 
 ---
 
-## Author
+## Authors
 * **Ty Edge** - [tyedge](https://github.com/tyedge)
-=======
-# AirBnB_clone
-Holberton AirBnB Clone
->>>>>>> 4e798bf989ffbc386c7e352e94e1f65d9cab5328
+* **Mark Hedgeland** - [zmbslyr](https://github.com/zmbslyr)
