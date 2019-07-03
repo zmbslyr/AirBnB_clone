@@ -27,15 +27,18 @@ class FileStorage:
     def save(self):
         """ This function serializes __objects to the JSON file
         (path: __file_path) """
-        for k, v in FileStorage.__objects.items():
-            if type(v) is not dict:
-                FileStorage.__objects[k] = v.to_dict()
+        newd = FileStorage.__objects.copy()
         with open(FileStorage.__file_path, 'w', encoding='utf-8') as file:
+            for k, v in newd.items():
+                if type(v) is not dict:
+                    newv = v.to_dict()
+                    FileStorage.__objects[k] = newv
             json.dump(FileStorage.__objects, file)
 
     def reload(self):
         """ This function recreates a BaseModel from another one by using a
         dictionary representation """
+        loader = {}
         oth = {}
         if path.exists(FileStorage.__file_path):
             with open(FileStorage.__file_path, "r", encoding="utf-8") as rfile:
