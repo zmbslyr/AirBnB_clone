@@ -217,10 +217,10 @@ class HBNBCommand(cmd.Cmd):
         """Catches all methods that are not defined"""
 
         funcs = {"all": self.do_all,
-                    "update": self.do_update,
-                    "show": self.do_show,
-                    "count": self.do_count,
-                    "destroy": self.do_destroy}
+                 "update": self.do_update,
+                 "show": self.do_show,
+                 "count": self.do_count,
+                 "destroy": self.do_destroy}
         args = (line.replace("(", ".").replace(")", ".")
                     .replace('"', "").replace(",", "").split("."))
 
