@@ -63,6 +63,14 @@ class FileStorage:
     def reload(self):
         """ This function recreates a BaseModel from another one by using a
         dictionary representation """
+
+        from models.base_model import BaseModel
+        from models.city import City
+        from models.state import State
+        from models.user import User
+        from models.place import Place
+        from models.amenity import Amenity
+        from models.review import Review
         loader = {}
         oth = {}
         if path.exists(FileStorage.__file_path):
