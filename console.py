@@ -211,7 +211,8 @@ class HBNBCommand(cmd.Cmd):
                     objList.append(value)
             else:
                 objList.append(value)
-        print(objList)
+        for i in objList:
+            print(i)
 
     def default(self, line):
         """Catches all methods that are not defined"""
