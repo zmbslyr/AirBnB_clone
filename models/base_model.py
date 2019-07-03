@@ -43,6 +43,12 @@ class BaseModel:
     def to_dict(self):
         """ This function returns a dictionary representation of a BaseModel
         instance """
+        if type(self.updated_at) is str:
+            self.updated_at = datetime.strptime(self.updated_at,
+                                                '%Y-%m-%dT%H:%M:%S.%f')
+        if type(self.created_at) is str:
+            self.created_at = datetime.strptime(self.created_at,
+                                                '%Y-%m-%dT%H:%M:%S.%f')
         self.__dict__['updated_at'] = '%s' % (self.updated_at.isoformat())
         self.__dict__['created_at'] = '%s' % (self.created_at.isoformat())
         self.__dict__['__class__'] = self.__class__.__name__
