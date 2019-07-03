@@ -73,10 +73,15 @@ class FileStorage:
         from models.review import Review
         loader = {}
         oth = {}
-        if path.exists(FileStorage.__file_path):
+         if path.exists(FileStorage.__file_path):
             with open(FileStorage.__file_path, "r", encoding="utf-8") as rfile:
                 loader = json.load(rfile)
-                FileStorage.__objects = loader
-        for k, v in FileStorage.__objects.items():
-            oth = BaseModel(None, **v)
-            FileStorage.__objects[k] = oth
+                for k, v in loader.items():
+                    newd = v
+                    if newd['__class__'] == 'BaseModel':
+                        oth = BaseModel(None, **newd)
+                    if newd['__class__'] == 'User':
+                        oth = User(None, **newd)
+                    if newd['__class__'] == 'State':
+                        oth = State(None, **newd)
+
