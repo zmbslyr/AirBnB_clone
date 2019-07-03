@@ -49,6 +49,15 @@ class FileStorage:
                 if isinstance(v, City):
                     instance = v.to_dict
                     FileStorage.__objects[k] = instance
+                if isinstance(v, Amenity):
+                    instance = v.to_dict
+                    FileStorage.__objects[k] = instance
+                if isinstance(v, Place):
+                    instance = v.to_dict
+                    FileStorage.__objects[k] = instance
+                if isinstance(v, Review):
+                    instance = v.to_dict
+                    FileStorage.__objects[k] = instance
             json.dump(FileStorage.__objects, file)
 
     def reload(self):
