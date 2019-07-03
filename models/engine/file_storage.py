@@ -37,9 +37,18 @@ class FileStorage:
         newd = FileStorage.__objects.copy()
         with open(FileStorage.__file_path, 'w', encoding='utf-8') as file:
             for k, v in newd.items():
-                if type(v) is not dict:
-                    newv = v.to_dict()
-                    FileStorage.__objects[k] = newv
+                if isinstance(v, BaseModel):
+                    instance = v.to_dict
+                    FileStorage.__objects[k] = instance
+                if isinstance(v, User):
+                    instance = v.to_dict
+                    FileStorage.__objects[k] = instance
+                if isinstance(v, State):
+                    instance = v.to_dict
+                    FileStorage.__objects[k] = instance
+                if isinstance(v, City):
+                    instance = v.to_dict
+                    FileStorage.__objects[k] = instance
             json.dump(FileStorage.__objects, file)
 
     def reload(self):
