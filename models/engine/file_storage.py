@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 """ This module defines the FileStorage class and its attributes """
 
+
 from os import path
 import json
+
 
 class FileStorage:
     """ This class defines the serialization and deserialization of python
@@ -73,8 +75,8 @@ class FileStorage:
         loader = {}
         newd = {}
         if path.isfile(FileStorage.__file_path):
-            with open(FileStorage.__file_path, "r+", encoding="utf-8") as rfile:
-                loader = json.load(rfile)
+            with open(FileStorage.__file_path, "r+", encoding="utf-8") as f:
+                loader = json.load(f)
                 for k, v in loader.items():
                     newd = v
                     if newd['__class__'] == 'BaseModel':
