@@ -4,7 +4,6 @@
 from os import path
 import json
 
-
 class FileStorage:
     """ This class defines the serialization and deserialization of python
     objects """
@@ -35,28 +34,28 @@ class FileStorage:
         from models.place import Place
         from models.review import Review
         newd = FileStorage.__objects.copy()
-        with open(FileStorage.__file_path, 'w', encoding='utf-8') as file:
+        with open(FileStorage.__file_path, 'w+', encoding='utf-8') as file:
             for k, v in newd.items():
                 if isinstance(v, BaseModel):
-                    instance = v.to_dict
+                    instance = v.to_dict()
                     FileStorage.__objects[k] = instance
                 if isinstance(v, User):
-                    instance = v.to_dict
+                    instance = v.to_dict()
                     FileStorage.__objects[k] = instance
                 if isinstance(v, State):
-                    instance = v.to_dict
+                    instance = v.to_dict()
                     FileStorage.__objects[k] = instance
                 if isinstance(v, City):
-                    instance = v.to_dict
+                    instance = v.to_dict()
                     FileStorage.__objects[k] = instance
                 if isinstance(v, Amenity):
-                    instance = v.to_dict
+                    instance = v.to_dict()
                     FileStorage.__objects[k] = instance
                 if isinstance(v, Place):
-                    instance = v.to_dict
+                    instance = v.to_dict()
                     FileStorage.__objects[k] = instance
                 if isinstance(v, Review):
-                    instance = v.to_dict
+                    instance = v.to_dict()
                     FileStorage.__objects[k] = instance
             json.dump(FileStorage.__objects, file)
 
@@ -72,9 +71,9 @@ class FileStorage:
         from models.amenity import Amenity
         from models.review import Review
         loader = {}
-        oth = {}
-        if path.exists(FileStorage.__file_path):
-            with open(FileStorage.__file_path, "r", encoding="utf-8") as rfile:
+        newd = {}
+        if path.isfile(FileStorage.__file_path):
+            with open(FileStorage.__file_path, "r+", encoding="utf-8") as rfile:
                 loader = json.load(rfile)
                 for k, v in loader.items():
                     newd = v
