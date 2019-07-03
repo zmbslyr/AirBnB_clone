@@ -49,7 +49,8 @@ class TestBase(unittest.TestCase):
         """Test __str__ method in BaseModel class"""
 
         base = self._class()
-        yes = "[" + self._name + "] ({}) {}".format(base.id, str(base.__dict__))
+        yes = "[" + self._name + "] ({}) {}".format(
+            base.id, str(base.__dict__))
         self.assertEqual(str(base), yes)
 
     def test_createTime(self):
@@ -77,4 +78,3 @@ class TestBase(unittest.TestCase):
             self.assertIsInstance(dic["updated_at"], str)
             self.assertEqual(dic["created_at"], base.created_at.isoformat())
             self.assertEqual(dic["updated_at"], base.updated_at.isoformat())
-
