@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ This module defines the BaseModel class and its attributes """
 
+from models import storage
 from datetime import datetime
 from os import path
 import json
@@ -28,6 +29,7 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
+            storage.new(self)
 
     def __str__(self):
         """ This function print a special string for instances of the BaseModel\
@@ -38,8 +40,7 @@ class BaseModel:
         """ This function updates and saves the 'updated_at' attribute for \
         instances of the BaseModel class """
         self.updated_at = datetime.now()
-        return self.updated_at
-
+        storage.save()
 
     def to_dict(self):
         """ This function returns a dictionary representation of a BaseModel\
