@@ -73,7 +73,7 @@ class FileStorage:
         from models.review import Review
         loader = {}
         oth = {}
-         if path.exists(FileStorage.__file_path):
+        if path.exists(FileStorage.__file_path):
             with open(FileStorage.__file_path, "r", encoding="utf-8") as rfile:
                 loader = json.load(rfile)
                 for k, v in loader.items():
@@ -84,4 +84,13 @@ class FileStorage:
                         oth = User(None, **newd)
                     if newd['__class__'] == 'State':
                         oth = State(None, **newd)
-
+                    if newd['__class__'] == 'City':
+                        oth = City(None, **newd)
+                    if newd['__class__'] == 'Amenity':
+                        oth = Amenity(None, **newd)
+                    if newd['__class__'] == 'Place':
+                        oth = Place(None, **newd)
+                    if newd['__class__'] == 'Review':
+                        oth = Review(None, **newd)
+                    loader[k] = oth
+                FileStorage.__objects = loader
