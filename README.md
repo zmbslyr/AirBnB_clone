@@ -1,6 +1,12 @@
 # 0x00. AirBnB clone - The console
 
-## Description
+## Project Overview
+
+Description of the project
+
+The goal of the project is to deploy on a server a simple copy of the AirBnB website.
+
+
 What you should learn from this project:
 
 * How to create a Python package
@@ -16,24 +22,7 @@ What you should learn from this project:
 
 ---
 
-### [0. README, AUTHORS](./README.md)
-*
-Write a README.md:
-
-
-description of the project
-description of the command interpreter:
-
-
-how to start it
-how to use it
-examples
-
-
-You should have an AUTHORS file at the root of your repository, listing all individuals having contributed content to the repository. For format, reference Docker’s AUTHORS page
-Also, we strongly encourage you to use branches and pull requests on Github - it will help you as team to organize your work
-
-
+This Project Included the Following Tasks:
 
 ### [1. Be PEP8 compliant!](./tests/)
 * Write beautiful code that passes the PEP8 checks.
@@ -98,6 +87,57 @@ Also, we strongly encourage you to use branches and pull requests on Github - it
 ### [16. Update from dictionary](./tests/test_console.py)
 * Update your command interpreter (console.py) to update an instance based on his ID with a dictionary: <class name>.update(<id>, <dictionary representation>).
 
+---
+
+## Command Interpreter Description, Usage and Examples:
+
+* Description of the command interpreter:
+
+The command interpreter manipulates data without a visual interface, which\
+eases developmentand debugging.
+
+* How to start command interpreter
+```
+./console.py
+```
+
+
+
+* How to use it
+
+The command interpreter can be used to create, manipulate,\
+serialize/deserialize and destroy class objects (i.e. BaseModel, User, State,\
+Amenity, City, Place, and Review - which allow for the management and\
+maintenance of the objects that comprise the HBnB Database.
+
+
+*Examples
+
+### How to start console (launches the prompt)
+```
+./console.py
+```
+### How to create a User Object (prints the id of the new object)
+```
+(hbnb) create User
+```
+### How to display a specific object (displays a string represntation of\
+the object)
+```
+(hbnb) show User [object id]
+```
+### How to display all objects or all object of a specific class (displays list)
+```
+(hbnb) all
+```
+or
+```
+(hbnb) all User
+```
+### How to destroy a User object (deletes object)
+```
+(hbnb) destroy User [object id]
+```
 
 ---
 
