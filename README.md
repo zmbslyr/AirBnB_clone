@@ -93,22 +93,12 @@ This Project Included the Following Tasks:
 
 * Description of the command interpreter:
 
-The command interpreter manipulates data without a visual interface, which\
-eases developmentand debugging.
-
-* How to start command interpreter
-```
-./console.py
-```
-
+The command interpreter manipulates data without a visual interface, which eases developmentand debugging.
 
 
 * How to use it
 
-The command interpreter can be used to create, manipulate,\
-serialize/deserialize and destroy class objects (i.e. BaseModel, User, State,\
-Amenity, City, Place, and Review - which allow for the management and\
-maintenance of the objects that comprise the HBnB Database.
+The command interpreter can be used to create, manipulate, serialize/deserialize and destroy class objects (i.e. BaseModel, User, State, Amenity, City, Place, and Review - which allow for the management and maintenance of the objects that comprise the HBnB Database.
 
 
 *Examples
